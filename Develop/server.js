@@ -9,7 +9,7 @@ const notesRouter = require('./routes/notes')
 PORT = 3001;
 
 app.use(express.static('public'));
-
+app.use(express.json());
 app.use('/notes', notesRouter);
 
 app.get('/', (req, res) => {res.send('')});
