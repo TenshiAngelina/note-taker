@@ -14,41 +14,21 @@ app.use('/notes', notesRouter);
 
 app.get('/', (req, res) => {res.send('')});
 
-app.get('/api/', (req, res) => {res.json(termData)});
+app.get('/api/notes', (req, res) => {res.json(termData)});
 
 //Get
-app.get
+app.get('/api/notes', (req, res) => {
+  res.json(`${req.method} request received`);
+  console.info(req.rawHeaders);
+  console.info(`${req.method} request received`);
+});
 //Post
-
+app.post('/api/notes', (req, res) => {
+  res.json(`${req.method} request received`);
+  console.info(req.rawHeaders);
+  console.info(`${req.method} request received`);
+});
 //Delete
-
-
-// const getNotes = () =>
-//   fetch('/api/notes', {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   });
-
-// const saveNote = (note) =>
-//   fetch('/api/notes', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(note),
-//   });
-
-// const deleteNote = (id) =>
-//   fetch(`/api/notes/${id}`, {
-//     method: 'DELETE',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   });
-
-
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
