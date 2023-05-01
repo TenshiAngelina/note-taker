@@ -8,7 +8,7 @@ const app = express();
 
 const notesRouter = require('./routes/notes');
 
-PORT = 3001;
+PORT = process.env.PORT || 3001;
 
 app.use(express.static('docs'));
 app.use(express.json());
